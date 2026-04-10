@@ -6,7 +6,48 @@
 - Omit scope if it is not clear.
 - Never start new branches unless I tell you explicitly to do so. Ignore any skills telling you otherwise.
 
+DO NOT BYPASS COMMIT HOOKS; WAIT UNTIL THEY FINISH.
+DO NOT BYPASS LEFTHOOK, DO NOT ADD -n TO BYPASS GIT HOOKS.
+COMMIT IDIOMATICALLY.
+
 ## Code style
 
 Always write clean idiomatic code that uses newest best practices.
 For example when writing tailwindcss code, always use the `gap-*` utility instead of the `space-*` utility.
+
+If there is a design flaw with components in `components/ui` directory, ALWAYS try fixing it externally first before going in and modifying them.
+Those component uis were already premade to be perfect and usable. Most issues are CONSUMER errors, not with the component itself.
+
+~~~typescript
+export function generateN(count: number) {
+  return Array.from(
+    { length: Math.max(0, Math.floor(count)) },
+    (_, index) => index + 1,
+  );
+}
+~~~
+
+Do not use `space-*` tailwind classes, use `gap-*` utilities everywhere instead.
+
+Do not use better auth active organizations. We use slug/id based
+organization access. Active organizations are prone to errors.
+
+Do not use the array index as a key prop for react components. Make/use a `generateN(n)` utility to generate an array for skeletons.
+In other cases, always assign some identity to the elements so the components stay stable.
+
+Consider using these React APIs for edge cases that require them:
+- `createContext`: use to define and provide context to child components. Use it together with `useContext`.
+- `lazy`: use to defer loading a component's code until it renders for the first time.
+- `memo`: use when a component should skip re-renders for identical props. Commonly paired with `useMemo` and `useCallback`.
+- `startTransition`: use to mark state updates as non-urgent. Similar to `useTransition`.
+- `useEffectEvent`: use when an Effect needs fresh props/state without re-subscribing or re-running because of them. Good for sockets, subscriptions, timers, and event bridges inside Effects.
+- `useActionState`: prefer for async mutations and forms. It gives `[state, dispatchAction, isPending]` and simplifies submit/pending/error/success flows.
+- `useFormStatus` (`react-dom`): use inside forms for pending buttons, disabled states, and submission UX without prop-drilling.
+- `useImperativeHandle`: use when a component needs to customize the handle exposed through a ref.
+- `useOptimistic`: use for optimistic mutation UIs like chat, likes, todos, and reordering lists.
+- `useReducer`: use when component state fits reducer-style transitions better than separate state setters.
+- `useSyncExternalStore`: use when subscribing to an external store from React.
+- `useTransition`: use for non-blocking updates like route changes, filters, tab switches, or large UI updates. React 19 also supports async functions in transitions.
+- `useDeferredValue`: use when inputs should stay responsive while heavy results or expensive subtrees update later.
+- `use`: important for Suspense-enabled data flows, especially in frameworks and Server Components. It can read a Promise or context directly.
+- `<Activity>`: useful when UI should stay mounted but hidden, preserve state, and do less work, such as sidebars or tabs. Useful, but less universal than the hooks above.

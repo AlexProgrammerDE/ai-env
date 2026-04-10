@@ -60,6 +60,6 @@ bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global 
 codex mcp add playwright bunx "@playwright/mcp@latest"
 claude mcp add playwright bunx @playwright/mcp@latest
 
-codex mcp add shadcn bunx "shadcn@latest mcp"
+codex mcp add shadcn bunx "shadcn@latest" "mcp"
 claude mcp add shadcn bunx shadcn@latest mcp
 ```

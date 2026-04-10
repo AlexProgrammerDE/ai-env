@@ -3,9 +3,21 @@
 
 ## Setup command
 
+### Linux/macOS
+
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 brew install codex
+curl -fsSL https://bun.sh/install | bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+### Windows
+
+```powershell
+powershell -c "irm bun.sh/install.ps1 | iex"
+Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+Add-MpPreference -ExclusionPath $(pnpm store path)
 ```
 
 ## Aliases
@@ -43,12 +55,12 @@ EOF
 ## Skills
 
 ```bash
-npx skills add https://github.com/vercel-labs/skills --skill find-skills
-npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
-npx skills add https://github.com/anthropics/skills --skill frontend-design
-npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
-npx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices
-npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns
-npx skills add https://github.com/shadcn/ui --skill shadcn
-npx skills add https://github.com/github/awesome-copilot --skill documentation-writer
+bunx skills add https://github.com/vercel-labs/skills --skill find-skills
+bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
+bunx skills add https://github.com/anthropics/skills --skill frontend-design
+bunx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
+bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices
+bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns
+bunx skills add https://github.com/shadcn/ui --skill shadcn
+bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer
 ```

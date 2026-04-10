@@ -51,5 +51,5 @@ bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-pra
 bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns --global --yes
 bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes
 bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer --global --yes
-npx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes
+bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes
 ```

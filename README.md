@@ -53,3 +53,18 @@ bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes
 bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer --global --yes
 bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes
 ```
+
+## MCP
+
+```bash
+codex mcp add playwright npx "@playwright/mcp@latest"
+claude mcp add playwright npx @playwright/mcp@latest
+
+pnpm dlx shadcn@latest mcp init --client claude
+pnpm dlx shadcn@latest mcp init --client codex
+echo << EOF >> ~/.codex/config.toml
+[mcp_servers.shadcn]
+command = "npx"
+args = ["shadcn@latest", "mcp"]
+EOF
+```

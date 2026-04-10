@@ -43,12 +43,12 @@ wget -O ~/.claude/CLAUDE.md https://raw.githubusercontent.com/AlexProgrammerDE/a
 ## Skills
 
 ```bash
-bunx skills add https://github.com/vercel-labs/skills --skill find-skills
-bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
-bunx skills add https://github.com/anthropics/skills --skill frontend-design
-bunx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
-bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices
-bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns
-bunx skills add https://github.com/shadcn/ui --skill shadcn
-bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer
+bunx skills add https://github.com/vercel-labs/skills --skill find-skills --global --yes
+bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices --global --yes
+bunx skills add https://github.com/anthropics/skills --skill frontend-design --global --yes
+bunx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines --global --yes
+bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices --global --yes
+bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns --global --yes
+bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes
+bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer --global --yes
 ```

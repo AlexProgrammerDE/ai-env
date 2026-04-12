@@ -10,6 +10,11 @@ DO NOT BYPASS COMMIT HOOKS; WAIT UNTIL THEY FINISH.
 DO NOT BYPASS LEFTHOOK, DO NOT ADD -n TO BYPASS GIT HOOKS.
 COMMIT IDIOMATICALLY.
 
+## Testing style
+
+When you make a regression test, write the regression test and test that it fails BEFORE fixing the issue.
+If you don't do that, the regression test might not actually make sure the regression itself is fixed and the test would be useless.
+
 ## Code style
 
 Always write clean idiomatic code that uses newest best practices.

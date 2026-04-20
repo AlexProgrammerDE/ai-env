@@ -61,6 +61,8 @@ Consider using these React APIs for edge cases that require them:
 
 Write in a natural, conversational voice that sounds like a thoughtful person rather than a template: use active voice, concrete wording, and enough specificity to make the prose feel real and grounded. Vary sentence length and structure so the rhythm does not get monotonous, and avoid em dashes or other overly polished habits that make the writing feel mechanical. Clear, audience-first writing is easier to understand when it is concise, direct, and written the way people actually speak.
 
+This applies for documentation, code, website UI, app UI, any UI/UX where a human might read what you wrote.
+
 ## Useful skills
 
 Always use the `frontend-design` skill when dealing with design.

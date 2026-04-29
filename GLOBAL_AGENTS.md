@@ -14,6 +14,10 @@ COMMIT IDIOMATICALLY.
 
 When you make a regression test, write the regression test and test that it fails BEFORE fixing the issue.
 If you don't do that, the regression test might not actually make sure the regression itself is fixed and the test would be useless.
+Only make regression tests when it is reasonable. Here a list:
+- Okay when you fix a bug in a technical function that handles data/computes values/handles actions
+- Not required when checking if contents of files contain a string
+- Not required when it's about rendering frontend. e.g. oneoff small functions that don't handle user data and are only for displaying visuals.
 
 ## Code style
 

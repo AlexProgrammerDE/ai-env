@@ -67,6 +67,89 @@ Write in a natural, conversational voice that sounds like a thoughtful person ra
 
 This applies for documentation, code, website UI, app UI, any UI/UX where a human might read what you wrote.
 
+## Blog writing
+
+### Markdown Blog Post Guide
+
+- Start with front matter if your blog engine uses it: `title`, `description`, `date`, `tags`, `author`, and optionally `canonical`, `image`, or `draft`.
+- Pick a topic your audience already cares about, not just something you want to publish.
+- Define the reader’s goal before writing: what should they know, decide, or do by the end?
+- Check search intent: are readers expecting a guide, list, comparison, opinion piece, tutorial, or update?
+- Choose a specific angle so the post is not just a rewrite of existing articles.
+- Use one clear title. In normal Markdown this is usually `# Title`; in Fumadocs, use front matter `title` instead.
+- Structure the body with `##` and `###` headings.
+- Put the main answer, thesis, or useful takeaway near the top.
+- Use short paragraphs. Markdown should be readable both rendered and raw.
+- Use `-` bullets for unordered lists and `1. 2. 3.` for ordered steps.
+- Use fenced code blocks with a language tag, like ```` ```ts ```` or ```` ```bash ````.
+- Use inline code for filenames, commands, variables, config keys, and short literals.
+- Add links with descriptive text: `[Fumadocs](https://fumadocs.dev)` is better than `click here`.
+- Add internal links to related posts and external links to credible references.
+- Use images only when they help the reader understand something.
+- Add useful alt text: `![Dashboard showing the server status panel](./server-status.png)`.
+- Prefer tables only for compact comparisons. Large tables are hard to read in raw Markdown and on mobile.
+- Use blockquotes sparingly for quoted material, notes, or callouts.
+- Escape Markdown characters when needed, like `\*literal asterisk\*`.
+- Avoid raw HTML unless Markdown or MDX cannot express what you need.
+- Preview the rendered post before publishing. Broken lists, code fences, tables, images, and links are common mistakes.
+- End with a practical summary, checklist, next step, or related links.
+
+### Fumadocs MDX
+
+- Treat Fumadocs MDX as a content processing layer, not a CMS. It turns `.md` and `.mdx` files into typed data for React apps.
+- Use `.md` for simple posts and `.mdx` when you need React components, imports, interactive examples, custom embeds, or reusable UI.
+- Define blog posts as a `doc` collection, usually from a folder like `content/blog`.
+- Validate front matter with a schema so fields like `title`, `description`, `date`, `tags`, and `image` stay consistent.
+- In Fumadocs UI, front matter `title` represents the page `h1`, so body content usually starts with `##`.
+- Register shared MDX components through `getMDXComponents`, usually starting with `defaultMdxComponents` from `fumadocs-ui/mdx`.
+- Use Fumadocs code block features for technical posts: titles, line numbers, highlighted lines, diff annotations, and tabbed code examples.
+- Use custom heading anchors like `[#my-heading-id]` when links must stay stable.
+- Use `[!toc]` to hide a heading from the table of contents and `[toc]` for TOC-only entries.
+- Use `<include>./other-file.mdx</include>` when you want to reuse content from another Markdown or MDX file.
+- Keep MDX source readable. If a post turns into a wall of JSX, extract the UI into a named component.
+
+### Useful Fumadocs Components
+
+- Use `Callout` for notes, warnings, errors, tips, and important context.
+- Use `Cards` for related posts, next steps, or grouped resource links.
+- Use `Tabs` for package managers, frameworks, languages, or platform-specific instructions. Give each `Tab` an explicit `value`.
+- Use `Steps` for installation guides, tutorials, setup flows, and ordered workflows.
+- Use `Files` to show project structure or file trees.
+- Use `Accordion` for FAQs and optional details. Add an `id` when you want people to link directly to a specific accordion item.
+- Use `Inline TOC` for longer posts that need local navigation inside a section.
+- Use `Zoomable Image` when screenshots or diagrams need inspection.
+- Use `Type Table` or `Auto Type Table` for API and TypeScript reference content.
+
+### YouTube Videos
+
+In MDX, embed YouTube with an iframe or, better, a reusable component. Use the `/embed/VIDEO_ID` URL, not the normal watch page URL.
+
+```mdx
+<div className="aspect-video overflow-hidden rounded-md border">
+  <iframe
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="Video title"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+    className="h-full w-full"
+  />
+</div>
+```
+
+A cleaner MDX pattern is to create a component:
+
+```mdx
+<YouTube id="VIDEO_ID" title="Installing EnderDash" />
+```
+
+For good video embeds:
+
+- Always include a clear `title`.
+- Keep the video responsive with a `16:9` wrapper.
+- Add a short summary before or after the video for readers who cannot watch it.
+- Do not autoplay unless there is a strong reason.
+- Use YouTube parameters only when needed, like `start=90` for a timestamp.
+
 ## Useful skills
 
 Always use the `frontend-design` skill when dealing with design.

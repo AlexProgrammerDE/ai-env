@@ -150,6 +150,14 @@ For good video embeds:
 - Do not autoplay unless there is a strong reason.
 - Use YouTube parameters only when needed, like `start=90` for a timestamp.
 
+## Drizzle migrations
+
+Drizzle migrations:
+- Never manually edit these files in the project dir `drizzle/` or `drizzle/meta/`.
+- Change the schema files first, then run `bunx drizzle-kit generate --name <migration-name>` from the project dir.
+- Commit the generated migration artifacts exactly as produced by Drizzle.
+- CI will apply/publish the generated migration flow automatically after push; do not hand-maintain Drizzle journal/meta files.
+
 ## Useful skills
 
 Always use the `frontend-design` skill when dealing with design.

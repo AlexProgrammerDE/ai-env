@@ -16,6 +16,12 @@ COMMIT IDIOMATICALLY.
 
 ## Code style
 
+### Naming
+
+- React components: `PascalCase` (e.g., `ServerInfoPanel.tsx`).
+- Hooks/util files: `kebab-case` (e.g., `use-server-connection.tsx`).
+- Java classes: `PascalCase`; packages under `com.enderdash.agent...`.
+
 Always write clean idiomatic code that uses newest best practices.
 For example when writing tailwindcss code, always use the `gap-*` utility instead of the `space-*` utility.
 

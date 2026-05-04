@@ -10,6 +10,10 @@ DO NOT BYPASS COMMIT HOOKS; WAIT UNTIL THEY FINISH.
 DO NOT BYPASS LEFTHOOK, DO NOT ADD -n TO BYPASS GIT HOOKS.
 COMMIT IDIOMATICALLY.
 
+## Testing Guidelines
+
+- No strict coverage gate is configured; new features should include targeted unit/integration tests when practical.
+
 ## Code style
 
 Always write clean idiomatic code that uses newest best practices.

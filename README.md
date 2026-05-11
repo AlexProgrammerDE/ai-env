@@ -7,6 +7,7 @@
 
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install codex
 curl -fsSL https://bun.sh/install | bash
 curl -fsSL https://get.pnpm.io/install.sh | sh -

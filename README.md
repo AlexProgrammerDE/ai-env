@@ -28,6 +28,7 @@ cat << EOF >> ~/.bashrc
 # AI aliases
 alias claudeo="claude --dangerously-skip-permissions"
 alias codexo="codex --dangerously-bypass-approvals-and-sandbox --search"
+alias t3="pnpm dlx t3"
 
 # quick open ptyxis
 alias console="setsid -f ptyxis --tab -d $PWD >/dev/null 2>&1"

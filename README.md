@@ -11,6 +11,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 brew install codex
 curl -fsSL https://bun.sh/install | bash
 curl -fsSL https://get.pnpm.io/install.sh | sh -
+curl -fsSL https://opencode.ai/install | bash
 ```
 
 ### Windows

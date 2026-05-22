@@ -13,7 +13,7 @@ curl -fsSL https://bun.sh/install | bash
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget
+sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby
 ```
 
 ### Windows

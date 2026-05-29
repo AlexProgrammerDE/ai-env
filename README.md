@@ -31,7 +31,7 @@ cat << EOF >> ~/.bashrc
 # AI aliases
 alias claudeo="claude --dangerously-skip-permissions"
 alias codexo="codex --dangerously-bypass-approvals-and-sandbox --search"
-alias opencodeo="OPENCODE_CONFIG_CONTENT='{"permission":"allow"}' opencode"
+alias opencodeo="OPENCODE_CONFIG_CONTENT='{\"permission\":\"allow\"}' opencode"
 alias t3="pnpm dlx t3"
 
 # quick open ptyxis

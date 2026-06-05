@@ -62,6 +62,16 @@ Consider using these React APIs for edge cases that require them:
 - `use`: important for Suspense-enabled data flows, especially in frameworks and Server Components. It can read a Promise or context directly.
 - `<Activity>`: useful when UI should stay mounted but hidden, preserve state, and do less work, such as sidebars or tabs. Useful, but less universal than the hooks above.
 
+### Coding behaviour
+
+Do not leave shims in the code. Always edit code thoroughly, idiomatically and do not leave shims.
+Leave the code in a clean state when making changes, noone wants to see dead components that are now unused or just dummies.
+
+### Testing behaviour
+
+When writing tests, don't make dumb redundant tests. Do not check in tests if they contain strings, that just makes refactors harder and doesn't bring us anything.
+Tests should cover complex logic, not be bloated pieces of additional code.
+
 ## Writing style
 
 Write in a natural, conversational voice that sounds like a thoughtful person rather than a template: use active voice, concrete wording, and enough specificity to make the prose feel real and grounded. Vary sentence length and structure so the rhythm does not get monotonous, and DO NOT USE EM-DASHES (`—`) or other overly polished habits that make the writing feel mechanical. Clear, audience-first writing is easier to understand when it is concise, direct, and written the way people actually speak.

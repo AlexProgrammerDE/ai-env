@@ -44,6 +44,7 @@ EOF
 ```bash
 wget -O ~/.codex/AGENTS.md https://raw.githubusercontent.com/AlexProgrammerDE/ai-env/refs/heads/main/GLOBAL_AGENTS.md
 wget -O ~/.claude/CLAUDE.md https://raw.githubusercontent.com/AlexProgrammerDE/ai-env/refs/heads/main/GLOBAL_AGENTS.md
+wget -O ~/.config/opencode/AGENTS.md https://raw.githubusercontent.com/AlexProgrammerDE/ai-env/refs/heads/main/GLOBAL_AGENTS.md
 ```
 
 ## Skills

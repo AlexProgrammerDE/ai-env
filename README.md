@@ -15,8 +15,12 @@ curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl
 
+# Prevent high ram usage from freezing the whole system
 sudo dnf install earlyoom
 sudo systemctl enable --now earlyoom
+
+# Add good file archive browser
+sudo dnf install file-roller unzip p7zip p7zip-plugins unrar
 ```
 
 ### Windows

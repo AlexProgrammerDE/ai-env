@@ -21,6 +21,9 @@ sudo systemctl enable --now earlyoom
 
 # Add good file archive browser
 sudo dnf install file-roller unzip p7zip p7zip-plugins unrar
+
+# C dev dependencies
+sudo dnf install valgrind libasan
 ```
 
 ### Windows

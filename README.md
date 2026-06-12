@@ -23,7 +23,7 @@ sudo systemctl enable --now earlyoom
 sudo dnf install file-roller unzip p7zip p7zip-plugins unrar
 
 # C dev dependencies
-sudo dnf install valgrind libasan
+sudo dnf install valgrind libasan libubsan
 ```
 
 ### Windows

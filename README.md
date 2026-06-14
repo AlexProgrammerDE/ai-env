@@ -79,7 +79,4 @@ claude mcp add playwright bunx @playwright/mcp@latest
 
 codex mcp add shadcn bunx "shadcn@latest" "mcp"
 claude mcp add shadcn bunx shadcn@latest mcp
-
-bunx ctx7 setup --claude
-bunx ctx7 setup --codex
 ```

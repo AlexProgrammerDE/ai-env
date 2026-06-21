@@ -24,6 +24,21 @@ sudo dnf install file-roller unzip p7zip p7zip-plugins unrar
 
 # C dev dependencies
 sudo dnf install valgrind libasan libubsan
+
+# Raise ulimits
+sudo tee /etc/security/limits.d/99-local-workstation.conf >/dev/null <<'EOF'
+# General desktop/development/gaming defaults.
+# Applies to PAM login sessions after logging out and back in.
+
+* soft nofile 65535
+* hard nofile 1048576
+
+* soft nproc 65535
+* hard nproc 262144
+
+* soft stack 8192
+* hard stack unlimited
+EOF
 ```
 
 ### Windows

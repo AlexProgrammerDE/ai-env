@@ -84,7 +84,7 @@ bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-compo
 bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes
 bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer --global --yes
 bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes
-bunx skills add https://github.com/effect-ts/skills --skill effect-ts --global --yes
+# bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes
 ```
 
 ## MCP

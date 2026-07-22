@@ -169,6 +169,21 @@ Drizzle migrations:
 - Commit the generated migration artifacts exactly as produced by Drizzle.
 - CI will apply/publish the generated migration flow automatically after push; do not hand-maintain Drizzle journal/meta files.
 
+## Shadcn/ui
+
+When working on a React project with shadcn/ui already installed, use the `shadcn` skill to learn about the documentation for various components.
+Use shadcn/ui components as idiomatically, always think about building UI whether it could be made with shadcn/ui components like:
+- `InputGroup`
+- `Field`
+- `Item`
+- `Field`
+- and more of the big shadcn/Ui catalog.
+
+Always use these components idiomatically as the documentation recommends.
+Always think about before building UI in such repositories "What shadcn/ui building blocks can I use for this and how do i tweak them to our usecase?"
+
+If possible, always try modifying the app code before modifying components in the ui dir. They should stay as pure to upstream as possible.
+
 ## Useful skills
 
 Always use the `frontend-design` skill when dealing with design.

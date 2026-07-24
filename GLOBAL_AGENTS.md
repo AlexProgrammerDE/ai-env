@@ -189,3 +189,7 @@ If possible, always try modifying the app code before modifying components in th
 Always use the `frontend-design` skill when dealing with design.
 If you are ChatGPT Codex, also use the `uncodixify` skill to improve your style.
 When writing documentation, always use the `documentation-writer` skill to produce clear and concise docs.
+
+## Loading states
+
+Use leaf-level loading states. Keep stable page structure, headings, navigation, labels, and independent content mounted. Show skeletons only for unresolved values, list rows, and permission-dependent actions. Never block an entire page or section on its slowest query.

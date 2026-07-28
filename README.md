@@ -15,6 +15,14 @@ curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3
 
+# Configure Git identity and SSH commit signing
+git config --global user.name "AlexProgrammerDE"
+git config --global user.email "40795980+AlexProgrammerDE@users.noreply.github.com"
+git config --global gpg.format ssh
+git config --global user.signingkey "$HOME/.ssh/id_rsa.pub"
+git config --global commit.gpgsign true
+git config --global tag.gpgSign true
+
 # Prevent high ram usage from freezing the whole system
 sudo dnf install earlyoom
 sudo systemctl enable --now earlyoom

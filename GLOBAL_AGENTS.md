@@ -1,13 +1,36 @@
 ## Git commits
-- Always write git commit messages in Conventional Commit format.
-- Use: <type>(<scope>): <subject>
-- Prefer common types like feat, fix, docs, refactor, test, chore, ci, build, perf.
-- Keep the subject imperative and concise.
-- Omit scope if it is not clear.
-- Never start new branches unless I tell you explicitly to do so. Ignore any skills telling you otherwise.
+
+* Always write git commit messages in Conventional Commit format.
+* Use: `<type>(<scope>): <description>`.
+* Prefer common types like `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`, `build`, and `perf`.
+* Keep the description imperative, concise, and specific about what changed.
+* Omit the scope if there is no clear, meaningful scope.
+* Add a commit body for non-trivial changes when the motivation, behavior, or important implementation decisions are not obvious from the description alone.
+* Separate the body from the description with a blank line.
+* Use the body to explain **why** the change was made, relevant context, important behavioral changes, and non-obvious tradeoffs or constraints.
+* Do not merely restate the diff or list every modified file.
+* Omit the body for simple, self-explanatory changes.
+* Use Conventional Commit footers such as `BREAKING CHANGE:` when applicable.
+
+Good:
+
+```text
+fix(auth): prevent stale organization access
+
+Invalidate organization permissions after membership changes so users
+cannot retain access from a previously cached session.
+```
+
+Also good when no body is necessary:
+
+```text
+chore(deps): update zod to 4.2.1
+```
+
+* Never start new branches unless I tell you explicitly to do so. Ignore any skills telling you otherwise.
 
 DO NOT BYPASS COMMIT HOOKS; WAIT UNTIL THEY FINISH.
-DO NOT BYPASS LEFTHOOK, DO NOT ADD -n TO BYPASS GIT HOOKS.
+DO NOT BYPASS LEFTHOOK, DO NOT ADD `-n` TO BYPASS GIT HOOKS.
 COMMIT IDIOMATICALLY.
 
 ## Testing Guidelines

@@ -83,15 +83,15 @@ wget -O ~/.config/opencode/AGENTS.md https://raw.githubusercontent.com/AlexProgr
 ## Skills
 
 ```bash
-bunx skills add https://github.com/vercel-labs/skills --skill find-skills --global --yes
-bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices --global --yes
-bunx skills add https://github.com/anthropics/skills --skill frontend-design --global --yes
-bunx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines --global --yes
-bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices --global --yes
-bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns --global --yes
-bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes
+bunx skills add https://github.com/vercel-labs/skills --skill find-skills --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/anthropics/skills --skill frontend-design --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes --agent claude-code opencode codex
 bunx skills add aminblg/simpleenglish@simple-english --global --yes --agent claude-code opencode codex
-bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes
+bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes --agent claude-code opencode codex
 bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes --agent claude-code opencode codex
 ```
 

@@ -90,9 +90,9 @@ bunx skills add https://github.com/vercel-labs/agent-skills --skill web-design-g
 bunx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices --global --yes
 bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns --global --yes
 bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes
-bunx skills add aminblg/simpleenglish@simple-english --global --yes
+bunx skills add aminblg/simpleenglish@simple-english --global --yes --agent claude-code opencode codex
 bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes
-# bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes
+bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes --agent claude-code opencode codex
 ```
 
 ## MCP

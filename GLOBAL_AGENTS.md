@@ -211,7 +211,9 @@ If possible, always try modifying the app code before modifying components in th
 
 Always use the `frontend-design` skill when dealing with design.
 If you are ChatGPT Codex, also use the `uncodixify` skill to improve your style.
-When writing documentation, always use the `documentation-writer` skill to produce clear and concise docs.
+When writing or rewriting documentation, always use the simple-english skill.
+Use pragmatic mode by default. Use strict mode when the user requests
+ASD-STE100 compliance or controlled technical English.
 
 ## Loading states
 

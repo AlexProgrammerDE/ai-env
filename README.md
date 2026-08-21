@@ -93,7 +93,9 @@ bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes --age
 bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer --global --yes --agent claude-code opencode codex
 bunx skills add aminblg/simpleenglish@simple-english --global --yes --agent claude-code opencode codex
 bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes --agent claude-code opencode codex
-bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes --agent claude-code opencode codex
+
+# Run locally, very invasive:
+# bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes --agent claude-code opencode codex
 ```
 
 ## MCP

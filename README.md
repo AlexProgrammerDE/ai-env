@@ -49,6 +49,16 @@ sudo tee /etc/security/limits.d/99-local-workstation.conf >/dev/null <<'EOF'
 EOF
 ```
 
+#### Increase swap
+
+```bash
+sudo mkdir -p /etc/systemd/zram-generator.conf.d
+sudo tee /etc/systemd/zram-generator.conf.d/99-size.conf >/dev/null <<'EOF'
+[zram0]
+zram-size = 32768
+EOF
+```
+
 ### Windows
 
 ```powershell

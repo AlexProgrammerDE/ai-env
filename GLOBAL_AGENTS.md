@@ -28,6 +28,7 @@ chore(deps): update zod to 4.2.1
 ```
 
 * Never start new branches unless I tell you explicitly to do so. Ignore any skills telling you otherwise.
+* Whenever you mention a Git commit, link its hash to the corresponding commit on GitHub, using `[<short-hash>](https://github.com/<owner>/<repo>/commit/<full-hash>)`.
 
 DO NOT BYPASS COMMIT HOOKS; WAIT UNTIL THEY FINISH.
 DO NOT BYPASS LEFTHOOK, DO NOT ADD `-n` TO BYPASS GIT HOOKS.

@@ -59,6 +59,17 @@ zram-size = 32768
 EOF
 ```
 
+#### Fedora QoL
+
+```bash
+flatpak install flathub \
+  it.mijorus.gearlever \
+  com.github.tchx84.Flatseal \
+  io.github.flattool.Warehouse \
+  io.missioncenter.MissionCenter \
+  org.localsend.localsend_app
+```
+
 ### Windows
 
 ```powershell

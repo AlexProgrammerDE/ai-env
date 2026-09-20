@@ -62,6 +62,10 @@ EOF
 #### Fedora QoL
 
 ```bash
+gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'strict'
+gsettings set org.gnome.desktop.wm.preferences resize-with-right-button true
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+
 flatpak install flathub \
   it.mijorus.gearlever \
   com.github.tchx84.Flatseal \

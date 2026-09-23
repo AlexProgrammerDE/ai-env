@@ -111,7 +111,7 @@ wget -O ~/.config/opencode/AGENTS.md https://raw.githubusercontent.com/AlexProgr
 You really should not use the default writing style. ChatGPT/Codex is a massive yapper and we want an efficient tool, not a buddy.
 So set this writing style:
 
-<img width="1578" height="1372" alt="image" src="https://github.com/user-attachments/assets/f7338d30-a564-42c4-bdb0-0329ec8f4c60" />
+<img width="789" height="686" alt="image" src="https://github.com/user-attachments/assets/f7338d30-a564-42c4-bdb0-0329ec8f4c60" />
 
 ## `AGENTS.md`/`CLAUDE.md`
 

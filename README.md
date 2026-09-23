@@ -106,6 +106,22 @@ wget -O ~/.claude/CLAUDE.md https://raw.githubusercontent.com/AlexProgrammerDE/a
 wget -O ~/.config/opencode/AGENTS.md https://raw.githubusercontent.com/AlexProgrammerDE/ai-env/refs/heads/main/GLOBAL_AGENTS.md
 ```
 
+## Setup Codex/ChatGPT
+
+You really should not use the default writing style. ChatGPT/Codex is a massive yapper and we want an efficient tool, not a buddy.
+So set this writing style:
+
+<img width="1578" height="1372" alt="image" src="https://github.com/user-attachments/assets/f7338d30-a564-42c4-bdb0-0329ec8f4c60" />
+
+## `AGENTS.md`/`CLAUDE.md`
+
+You should always write a repo-level `AGENTS.md` and then write a `CLAUDE.md` with the content:
+```text
+@AGENTS.md
+```
+
+Claudes preprocessor will import the AGENTS.md contents automatically.
+
 ## Skills
 
 ```bash

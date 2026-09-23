@@ -65,6 +65,7 @@ EOF
 gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'strict'
 gsettings set org.gnome.desktop.wm.preferences resize-with-right-button true
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+gsettings set org.gnome.desktop.screensaver restart-enabled true
 
 flatpak install flathub \
   it.mijorus.gearlever \

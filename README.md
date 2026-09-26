@@ -49,6 +49,17 @@ sudo tee /etc/security/limits.d/99-local-workstation.conf >/dev/null <<'EOF'
 EOF
 ```
 
+#### Linux: increase the inotify instance limit
+
+Desktop tools and game clients can exhaust the default limit. Set the limit to 512 and apply it now:
+
+```bash
+sudo tee /etc/sysctl.d/99-local-inotify.conf >/dev/null <<'EOF'
+fs.inotify.max_user_instances = 512
+EOF
+sudo sysctl -w fs.inotify.max_user_instances=512
+```
+
 #### Increase swap
 
 ```bash

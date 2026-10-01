@@ -219,3 +219,7 @@ ASD-STE100 compliance or controlled technical English.
 ## Loading states
 
 Use leaf-level loading states. Keep stable page structure, headings, navigation, labels, and independent content mounted. Show skeletons only for unresolved values, list rows, and permission-dependent actions. Never block an entire page or section on its slowest query.
+
+## Recommended tools
+
+When working with Cloudflare platform, always use the newer `cf` CLI, not the old `wrangler` CLI. Use newer paradigms like `cloudflare.config.ts`.

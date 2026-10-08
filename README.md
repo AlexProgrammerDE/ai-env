@@ -47,6 +47,9 @@ sudo tee /etc/security/limits.d/99-local-workstation.conf >/dev/null <<'EOF'
 * soft stack 8192
 * hard stack unlimited
 EOF
+
+# RDP clients
+sudo dnf install gnome-connections remmina
 ```
 
 #### Linux: increase the inotify instance limit

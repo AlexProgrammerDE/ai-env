@@ -120,6 +120,11 @@ wget -O ~/.claude/CLAUDE.md https://raw.githubusercontent.com/AlexProgrammerDE/a
 wget -O ~/.config/opencode/AGENTS.md https://raw.githubusercontent.com/AlexProgrammerDE/ai-env/refs/heads/main/GLOBAL_AGENTS.md
 ```
 
+Keep `GLOBAL_AGENTS.md` limited to personal working agreements: Git, implementation,
+verification, and writing. Put project commands, architecture, and framework rules
+in each repository's `AGENTS.md`. Put detailed procedures in skills and load them
+only for relevant tasks.
+
 ## Setup Codex/ChatGPT
 
 You really should not use the default writing style. ChatGPT/Codex is a massive yapper and we want an efficient tool, not a buddy.

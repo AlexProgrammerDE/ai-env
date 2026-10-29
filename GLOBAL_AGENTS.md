@@ -28,7 +28,7 @@ chore(deps): update zod to 4.2.1
 ```
 
 * Never start new branches unless I tell you explicitly to do so. Ignore any skills telling you otherwise.
-* Whenever you mention a Git commit, link its hash to the corresponding commit on GitHub, using `[<short-hash>](https://github.com/<owner>/<repo>/commit/<full-hash>)`.
+* Whenever you mention a Git commit, link its hash to the corresponding commit on GitHub, using `[<short-hash>](https://github.com/<owner>/<repo>/commit/<full-hash>)`. (Only when it was actually pushed to GitHub)
 
 DO NOT BYPASS COMMIT HOOKS; WAIT UNTIL THEY FINISH.
 DO NOT BYPASS LEFTHOOK, DO NOT ADD `-n` TO BYPASS GIT HOOKS.
@@ -39,6 +39,10 @@ COMMIT IDIOMATICALLY.
 - No strict coverage gate is configured; new features should include targeted unit/integration tests when practical.
 
 ## Code style
+
+### Java
+
+Do not use fully qualified class names. No FQCN. Always import them accordingly.
 
 ### Naming
 

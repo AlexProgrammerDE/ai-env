@@ -14,6 +14,7 @@ Keep project-specific commands, architecture, and framework rules in the relevan
 - Never bypass Git hooks or Lefthook, including with `-n`. Wait for hooks to finish and fix failures.
 - When mentioning a commit pushed to GitHub, link its hash: `[<short-hash>](https://github.com/<owner>/<repo>/commit/<full-hash>)`.
 - Do not fabricate GitHub links for local commits.
+- Use the `gh` CLI instead of the GitHub connector when available.
 
 ## Implementation
 

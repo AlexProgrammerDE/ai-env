@@ -168,4 +168,6 @@ claude mcp add playwright bunx @playwright/mcp@latest
 
 codex mcp add shadcn bunx "shadcn@latest" "mcp"
 claude mcp add shadcn bunx shadcn@latest mcp
+
+npx -y @posthog/wizard@latest mcp add
 ```

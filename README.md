@@ -143,6 +143,10 @@ Claudes preprocessor will import the AGENTS.md contents automatically.
 
 ## Skills
 
+The PR skills use an authenticated GitHub CLI (`gh`).
+`babysit-pr` also needs Python 3.
+`before-and-after` needs `agent-browser` and GitHub CLI 2.99 or later.
+
 ```bash
 bunx skills add https://github.com/vercel-labs/skills --skill find-skills --global --yes --agent claude-code opencode codex
 bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices --global --yes --agent claude-code opencode codex
@@ -153,8 +157,9 @@ bunx skills add https://github.com/vercel-labs/agent-skills --skill vercel-compo
 bunx skills add https://github.com/shadcn/ui --skill shadcn --global --yes --agent claude-code opencode codex
 bunx skills add https://github.com/github/awesome-copilot --skill documentation-writer --global --yes --agent claude-code opencode codex
 bunx skills add aminblg/simpleenglish@simple-english --global --yes --agent claude-code opencode codex
-bunx skills add https://github.com/cyxzdev/uncodixfy --skill uncodixfy --global --yes --agent claude-code opencode codex
 bunx skills add blader/humanizer --skill humanizer --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/vercel-labs/before-and-after --skill before-and-after --global --yes --agent claude-code opencode codex
+bunx skills add https://github.com/t3dotgg/tstack --skill file-pr babysit-pr leaving-pr-comments --global --yes --agent claude-code opencode codex
 
 # Run locally, very invasive:
 # bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes --agent claude-code opencode codex

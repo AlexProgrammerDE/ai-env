@@ -168,7 +168,7 @@ bunx skills add https://github.com/t3dotgg/tstack --skill file-pr babysit-pr lea
 ### Resync skills
 
 Run this on each machine to reinstall the skills listed above from the latest README.
-It preserves other installed skills.
+It removes `uncodixfy` and preserves other installed skills.
 Bun must be installed.
 
 ```bash
@@ -188,6 +188,10 @@ Bun must be installed.
     "$skills_tmp/README.md" > "$skills_tmp/install.sh"
 
   test -s "$skills_tmp/install.sh"
+
+  bunx skills remove uncodixfy --global --yes \
+    --agent claude-code opencode codex </dev/null
+
   bash -e "$skills_tmp/install.sh" </dev/null
 )
 ```

@@ -165,6 +165,36 @@ bunx skills add https://github.com/t3dotgg/tstack --skill file-pr babysit-pr lea
 # bunx skills add https://github.com/effect-ts/skills --skill effect-ts --yes --agent claude-code opencode codex
 ```
 
+### Resync skills
+
+Run this on each machine to reinstall the skills listed above from the latest README.
+It preserves other installed skills.
+Bun must be installed.
+
+```bash
+(
+  set -euo pipefail
+
+  skills_tmp=$(mktemp -d)
+  trap 'rm -rf "$skills_tmp"' EXIT
+
+  curl -fsSL \
+    https://raw.githubusercontent.com/AlexProgrammerDE/ai-env/main/README.md \
+    -o "$skills_tmp/README.md"
+
+  awk '/^## Skills$/{skills=1; next}
+       skills && /^## /{exit}
+       skills && /^bunx skills add /{print}' \
+    "$skills_tmp/README.md" > "$skills_tmp/install.sh"
+
+  test -s "$skills_tmp/install.sh"
+  bash -e "$skills_tmp/install.sh" </dev/null
+)
+```
+
+The commands run from a file with stdin disconnected.
+This prevents an installer from consuming later commands as input.
+
 ## MCP
 
 ```bash

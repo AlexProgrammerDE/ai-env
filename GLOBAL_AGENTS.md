@@ -23,6 +23,7 @@ Keep project-specific commands, architecture, and framework rules in the relevan
 - Fix the underlying problem. Remove temporary scaffolding and code made obsolete by the change.
 - Keep necessary compatibility behavior. Do not leave dummy implementations or unused components.
 - Keep changes focused. Avoid unrelated refactors and formatting changes.
+- Prefer the simplest solution that satisfies the request. Avoid speculative abstractions and features.
 
 ## Verification
 
@@ -31,6 +32,7 @@ Keep project-specific commands, architecture, and framework rules in the relevan
 - Test observable behavior and meaningful edge cases. Avoid tests that only mirror the implementation or assert source text.
 - Assert strings when their content is part of the behavior or contract.
 - Report what you verified and any checks you could not complete. Distinguish local changes, pushed code, and live behavior.
+- Start with focused checks. Broaden verification when the change or repository requirements justify it.
 
 ## Writing
 
@@ -40,3 +42,8 @@ Keep project-specific commands, architecture, and framework rules in the relevan
 - Apply this style to documentation, comments, UI text, commit messages, and explanations.
 - For technical documentation, use `simple-english` in pragmatic mode. Use strict mode only for explicit ASD-STE100 requests.
 - For substantial documentation structure or new guides, also use `documentation-writer`.
+
+## Collaboration
+
+- Treat questions and comparison requests as read-only unless I ask for changes.
+- Match the process to the task. Use subagents only when parallel work or independent review adds clear value.

@@ -10,6 +10,8 @@ curl -fsSL https://claude.ai/install.sh | bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
 curl -fsSL https://bun.sh/install | bash
+bun add --global agent-browser
+agent-browser install
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -93,6 +95,8 @@ flatpak install flathub \
 
 ```powershell
 powershell -c "irm bun.sh/install.ps1 | iex"
+bun add --global agent-browser
+agent-browser install
 Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
 Add-MpPreference -ExclusionPath $(pnpm store path)
 ```

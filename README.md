@@ -213,5 +213,5 @@ claude mcp add shadcn bunx shadcn@latest mcp
 
 npx -y @posthog/wizard@latest mcp add
 
-npx -y rea-agents setup
+npx -y rea-agents setup --yes --install-hopper --all-detected
 ```

@@ -213,5 +213,5 @@ claude mcp add shadcn bunx shadcn@latest mcp
 
 npx -y @posthog/wizard@latest mcp add
 
-npx -y rea-agents setup --yes --install-hopper --all-detected
+npx -y rea-agents setup --yes --install-hopper --client claude_code --client opencode --client codex
 ```

@@ -212,4 +212,6 @@ codex mcp add shadcn bunx "shadcn@latest" "mcp"
 claude mcp add shadcn bunx shadcn@latest mcp
 
 npx -y @posthog/wizard@latest mcp add
+
+npx -y rea-agents setup
 ```

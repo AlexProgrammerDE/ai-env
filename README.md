@@ -52,6 +52,14 @@ EOF
 
 # RDP clients
 sudo dnf install gnome-connections remmina
+
+# Proton tools
+curl -fsSL https://proton.me/download/pass-cli/install.sh | bash
+URL="https://proton.me/download/drive/$(curl -fsSL https://proton.me/download/drive/cli/index.html | grep -oE 'cli/[0-9]+\.[0-9]+\.[0-9]+/linux-x64/proton-drive' | sort -uV | tail -1)"
+curl -fL -o /tmp/proton-drive "$URL" && sudo install -m 0755 /tmp/proton-drive /usr/local/bin/proton-drive && proton-drive version
+sudo dnf install "https://repo.protonvpn.com/fedora-$(rpm -E %fedora)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.5-1.noarch.rpm"
+sudo dnf check-update --refresh; sudo dnf install proton-vpn-gnome-desktop
+sudo dnf install "$(curl -fsSL https://proton.me/download/current_version_linux.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["RpmFile"])')"
 ```
 
 #### Linux: increase the inotify instance limit

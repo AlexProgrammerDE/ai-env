@@ -62,6 +62,17 @@ sudo dnf check-update --refresh; sudo dnf install proton-vpn-gnome-desktop
 sudo dnf install "$(curl -fsSL https://proton.me/download/current_version_linux.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["RpmFile"])')"
 ```
 
+#### Linux: Log into proton tools
+
+We got proton tools now, lets log in:
+
+```bash
+pass-cli login
+proton-drive auth login
+protonvpn signin <your-username>
+protonmail-bridge --cli   # then type: login
+```
+
 #### Linux: increase the inotify instance limit
 
 Desktop tools and game clients can exhaust the default limit. Set the limit to 512 and apply it now:

@@ -16,7 +16,7 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sL https://git.io/go-installer | bash
-sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3 prometheus lm_sensors putty wireguard-tools
+sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3 prometheus lm_sensors putty wireguard-tools postgresql
 
 # Configure Git identity and SSH commit signing
 git config --global user.name "AlexProgrammerDE"

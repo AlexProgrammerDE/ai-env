@@ -15,6 +15,7 @@ agent-browser install
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -sL https://git.io/go-installer | bash
 sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3 prometheus lm_sensors putty wireguard-tools
 
 # Configure Git identity and SSH commit signing
@@ -60,6 +61,9 @@ curl -fL -o /tmp/proton-drive "$URL" && sudo install -m 0755 /tmp/proton-drive /
 sudo dnf install "https://repo.protonvpn.com/fedora-$(rpm -E %fedora)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.5-1.noarch.rpm"
 sudo dnf check-update --refresh; sudo dnf install proton-vpn-gnome-desktop
 sudo dnf install "$(curl -fsSL https://proton.me/download/current_version_linux.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["RpmFile"])')"
+
+# Go CLIs
+go install github.com/evilmartians/lefthook/v2@v2.2.2
 ```
 
 #### Linux: Log into proton tools

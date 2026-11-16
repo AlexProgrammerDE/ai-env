@@ -43,6 +43,15 @@ Keep project-specific commands, architecture, and framework rules in the relevan
 - For technical documentation, use `simple-english` in pragmatic mode. Use strict mode only for explicit ASD-STE100 requests.
 - For substantial documentation structure or new guides, also use `documentation-writer`.
 
+## Temporary files
+
+- `/tmp` can be a RAM-backed tmpfs with a per-user quota. Do not put large or long-lived data there.
+- Use the session scratchpad or `$TMPDIR` for small temporary files.
+- Put builds, browser profiles, downloads, dumps, recordings, and large logs in a gitignored project directory or `$TMPDIR`, not `/tmp`.
+- Delete temporary files you created when you no longer need them.
+- Before you delete files that you did not create, show me what you would delete and ask first.
+- If a write fails with `ENOSPC` or `EDQUOT`, stop and report it. Do not free space on your own.
+
 ## Collaboration
 
 - Treat questions and comparison requests as read-only unless I ask for changes.

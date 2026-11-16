@@ -98,6 +98,30 @@ zram-size = 32768
 EOF
 ```
 
+#### Keep temporary files off the `/tmp` ramdisk
+
+On Fedora, `/tmp` is a RAM-backed tmpfs with a per-user quota. AI tools and the dev tools they run can fill it, and then every write to `/tmp` fails with `EDQUOT`.
+Set `TMPDIR` to a disk-backed directory for the whole login session, and delete old files there automatically:
+
+```bash
+mkdir -p ~/.config/environment.d ~/.config/user-tmpfiles.d
+
+tee ~/.config/environment.d/50-tmpdir.conf >/dev/null <<'EOF'
+TMPDIR=${HOME}/.cache/tmp
+CLAUDE_CODE_TMPDIR=${HOME}/.cache/claude-tmp
+EOF
+
+# Delete files older than the given age. The systemd-tmpfiles-clean user timer runs this daily.
+tee ~/.config/user-tmpfiles.d/agent-tmp.conf >/dev/null <<'EOF'
+d %h/.cache/tmp 0700 - - 3d
+d %h/.cache/claude-tmp 0700 - - 7d
+EOF
+
+systemd-tmpfiles --user --create
+```
+
+Log out and back in to apply `TMPDIR`. `environment.d` applies to GUI apps and terminals, so it also covers agents started from desktop apps.
+
 #### Fedora QoL
 
 ```bash
@@ -148,7 +172,7 @@ wget -O ~/.config/opencode/AGENTS.md https://raw.githubusercontent.com/AlexProgr
 ```
 
 Keep `GLOBAL_AGENTS.md` limited to personal working agreements: Git, implementation,
-verification, and writing. Put project commands, architecture, and framework rules
+verification, writing, and temporary files. Put project commands, architecture, and framework rules
 in each repository's `AGENTS.md`. Put detailed procedures in skills and load them
 only for relevant tasks.
 

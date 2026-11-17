@@ -18,6 +18,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sL https://git.io/go-installer | bash
 sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3 prometheus lm_sensors putty wireguard-tools postgresql
 
+sudo dnf install sway grim wf-recorder libxkbcommon-devel
+
 # Update Rust
 rustup update stable
 

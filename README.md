@@ -270,3 +270,31 @@ npx -y @posthog/wizard@latest mcp add
 
 npx -y rea-agents setup --yes --all-detected
 ```
+
+### REA on Fedora
+
+Install the packages for Android device access, packet inspection, signal decoding, firmware inspection, and Python binary analysis:
+
+```bash
+sudo dnf install android-tools wireshark-cli sigrok-cli binwalk python3-pwntools nodejs24
+```
+
+Pass these environment variables to the REA server process:
+
+```bash
+export REA_TSHARK_COMMAND=/usr/bin/tshark
+export REA_SIGROK_COMMAND=/usr/bin/sigrok-cli
+export REA_BINWALK_COMMAND=/usr/bin/binwalk
+export REA_PWNTOOLS_PYTHON=/usr/bin/python3
+```
+
+For agents started from a desktop app, set the variables in the REA MCP server configuration.
+Restart the REA server after changes.
+
+SQLite inspection requires Node.js 24.15 or later in the 24.x series, or Node.js 26 or later.
+Installing `nodejs24` does not switch an existing REA launcher that uses a pnpm-managed Node.js runtime.
+Make sure that the REA launcher uses the supported runtime.
+
+REA 6.7.0 specifies WABT 1.0.42, but Fedora 44 currently provides 1.0.40. Install the required version separately.
+JADX analysis needs the separate `jadx-headless-mcp` 0.7.1 JAR.
+Apktool and Wakaru also need separate installation.

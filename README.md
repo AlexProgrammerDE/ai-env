@@ -19,6 +19,8 @@ curl -sL https://git.io/go-installer | bash
 sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3 prometheus lm_sensors putty wireguard-tools postgresql
 
 sudo dnf install sway grim wf-recorder libxkbcommon-devel
+sudo dnf install pipx
+pipx install mitmproxy
 
 # Update Rust
 rustup update stable

@@ -273,22 +273,6 @@ npx -y rea-agents setup --yes --all-detected
 
 ### REA on Fedora
 
-Pass these environment variables to the REA server process:
-
-```bash
-export REA_TSHARK_COMMAND=/usr/bin/tshark
-export REA_SIGROK_COMMAND=/usr/bin/sigrok-cli
-export REA_BINWALK_COMMAND=/usr/bin/binwalk
-export REA_PWNTOOLS_PYTHON=/usr/bin/python3
-```
-
-For agents started from a desktop app, set the variables in the REA MCP server configuration.
-Restart the REA server after changes.
-
-SQLite inspection requires Node.js 24.15 or later in the 24.x series, or Node.js 26 or later.
-Installing `nodejs24` does not switch an existing REA launcher that uses a pnpm-managed Node.js runtime.
-Make sure that the REA launcher uses the supported runtime.
-
-REA 6.7.0 specifies WABT 1.0.42, but Fedora 44 currently provides 1.0.40. Install the required version separately.
-JADX analysis needs the separate `jadx-headless-mcp` 0.7.1 JAR.
-Apktool and Wakaru also need separate installation.
+The main install command includes the Fedora packages for REA.
+Follow [REA setup on Fedora](docs/rea-fedora.md) to configure tool paths, Python dependencies, and longer Ghidra timeouts.
+The guide covers Codex, Claude Code, and OpenCode.

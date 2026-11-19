@@ -34,9 +34,13 @@ Back up each configuration file before editing it.
 Merge the REA entry into the existing file and preserve other servers and settings.
 Set the variables in the MCP entry so that desktop apps receive them too.
 
-Each example sets Ghidra's import and analysis deadline to 30 minutes (`1800000` milliseconds).
-REA's default is 330 seconds, which can be too short for a large executable's first analysis.
-The client tool timeout is 35 minutes, which leaves time for the requested operation after startup.
+Each example sets Ghidra's import and analysis deadline to 60 minutes (`3600000` milliseconds).
+REA's default is 330 seconds, which is too short for a large executable's first analysis.
+The client tool timeout is 65 minutes, which leaves time for the requested operation after startup.
+
+`GHIDRA_HEADLESS_MAXMEM` sets the Java heap for headless Ghidra. REA also reads `GHIDRA_MAXMEM`.
+REA's default is `2G`. With that heap, a 324 MB Windows executable did not finish its first analysis in 30 minutes.
+The examples use `16G` for a workstation with 62 GB of RAM. Use a smaller value on a machine with less memory.
 
 ### Codex
 
@@ -47,11 +51,12 @@ Update the existing `[mcp_servers.rea]` entry in `~/.codex/config.toml`:
 command = "/usr/bin/npx"
 args = ["-y", "rea-agents@6.7.0", "mcp"]
 startup_timeout_sec = 30
-tool_timeout_sec = 2100
+tool_timeout_sec = 3900
 
 [mcp_servers.rea.env]
 GHIDRA_INSTALL_DIR = "/home/alex/.local/opt/ghidra_12.1.4_PUBLIC"
-REA_GHIDRA_STARTUP_TIMEOUT_MS = "1800000"
+REA_GHIDRA_STARTUP_TIMEOUT_MS = "3600000"
+GHIDRA_HEADLESS_MAXMEM = "16G"
 REA_TSHARK_COMMAND = "/usr/bin/tshark"
 REA_CAPINFOS_COMMAND = "/usr/bin/capinfos"
 REA_SIGROK_COMMAND = "/usr/bin/sigrok-cli"
@@ -72,10 +77,11 @@ Update `mcpServers.rea` in `~/.claude.json`:
     "rea": {
       "command": "/usr/bin/npx",
       "args": ["-y", "rea-agents@6.7.0", "mcp"],
-      "timeout": 2100000,
+      "timeout": 3900000,
       "env": {
         "GHIDRA_INSTALL_DIR": "/home/alex/.local/opt/ghidra_12.1.4_PUBLIC",
-        "REA_GHIDRA_STARTUP_TIMEOUT_MS": "1800000",
+        "REA_GHIDRA_STARTUP_TIMEOUT_MS": "3600000",
+        "GHIDRA_HEADLESS_MAXMEM": "16G",
         "REA_TSHARK_COMMAND": "/usr/bin/tshark",
         "REA_CAPINFOS_COMMAND": "/usr/bin/capinfos",
         "REA_SIGROK_COMMAND": "/usr/bin/sigrok-cli",
@@ -104,10 +110,11 @@ Update `mcp.servers.rea` in `~/.config/opencode/opencode.jsonc`:
         "type": "local",
         "command": ["/usr/bin/npx", "-y", "rea-agents@6.7.0", "mcp"],
         "disabled": false,
-        "timeout": { "execution": 2100000 },
+        "timeout": { "execution": 3900000 },
         "environment": {
           "GHIDRA_INSTALL_DIR": "/home/alex/.local/opt/ghidra_12.1.4_PUBLIC",
-          "REA_GHIDRA_STARTUP_TIMEOUT_MS": "1800000",
+          "REA_GHIDRA_STARTUP_TIMEOUT_MS": "3600000",
+          "GHIDRA_HEADLESS_MAXMEM": "16G",
           "REA_TSHARK_COMMAND": "/usr/bin/tshark",
           "REA_CAPINFOS_COMMAND": "/usr/bin/capinfos",
           "REA_SIGROK_COMMAND": "/usr/bin/sigrok-cli",
@@ -140,8 +147,8 @@ A `target_required` result means that the operation needs an opened artifact.
 
 ## Large binaries and remaining prerequisites
 
-The longer timeout allows more time for the first Ghidra analysis. It does not reuse an unrelated cached analysis.
-Keep the existing memory cap and analyzers unless a failure identifies a separate problem.
+The longer timeout and larger heap allow more time and memory for the first Ghidra analysis. They do not reuse an unrelated cached analysis.
+After a successful first analysis, pass `snapshot_path` to `close_binary` to keep the result for later sessions.
 `REA_GHIDRA_DISABLED_ANALYZERS` can skip expensive analyzers, but this changes analysis coverage.
 Do not claim that a large binary succeeds until its analysis finishes.
 

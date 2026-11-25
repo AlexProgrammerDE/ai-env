@@ -15,6 +15,7 @@ agent-browser install
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 curl -fsSL https://opencode.ai/install | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 curl -sL https://git.io/go-installer | bash
 sudo dnf install protobuf-compiler gcc cmake autoconf make git curl wget python ruby perl sqlite3 prometheus lm_sensors putty wireguard-tools postgresql android-tools wireshark-cli sigrok-cli binwalk python3-pwntools nodejs24
 
@@ -74,6 +75,7 @@ go install github.com/evilmartians/lefthook/v2@v2.2.2
 
 # Rust CLIs
 cargo +stable install openrouter-cli --locked
+cargo binstall forgejo-cli
 ```
 
 #### Linux: Log into proton tools
